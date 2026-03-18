@@ -1,0 +1,27 @@
+//Tel Solution Button
+add_action('wp_footer', 'auto_add_tel_prefix');
+function auto_add_tel_prefix() {
+    ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 'auto-tel' class wale sab buttons ko find karo
+        var phoneLinks = document.querySelectorAll('.elementor-button');
+        
+        phoneLinks.forEach(function(link) {
+            var rawNumber = link.getAttribute('href');
+            
+            if (rawNumber) {
+                // Ye trick sirf numbers (aur agar + sign ho toh usay) rakhegi, 
+                // baqi http://, spaces, brackets sab automatically ura degi!
+                var cleanNumber = rawNumber.replace(/[^\d+]/g, '');
+                
+                // Final clean link set kar do
+                if(cleanNumber) {
+                    link.setAttribute('href', 'tel:' + cleanNumber);
+                }
+            }
+        });
+    });
+    </script>
+    <?php
+}
