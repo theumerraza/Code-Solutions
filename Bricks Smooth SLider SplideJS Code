@@ -1,1 +1,32 @@
+{
+  "type": "loop",
+	"perPage": 9,
+  "speed": 5000,
+  "easing": "linear",
+  "waitForTransition": false,
+  "pauseOnHover": false,
+  "drag": false,
+  "direction": "rtl",
+  "breakpoints": {
+		"1200": {
+			"perPage": 6
+		},
+    "768": {
+			"perPage": 4
+		},
+    "520": {
+			"perPage": 3
+		}
+  },
 
+  "perMove": 1,
+  "gap": "10px",
+  "height": "auto",
+  "autoHeight": false,
+  "arrows": false,
+  "autoplay": true,
+  "pagination": false,
+  "easing": "linear",
+  "wheelSleep": 0,
+  "rewindSpeed": 0
+}
